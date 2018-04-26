@@ -9,6 +9,10 @@ import fastClick from 'fastclick'
 import './assets/styles/reset.css'
 // 1像素解决方案.
 import './assets/styles/border.css'
+// bootstrap,jQuery.
+// import $ from 'jquery'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/js/bootstrap'
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)
