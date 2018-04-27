@@ -1,5 +1,5 @@
  <template>
-  <div id="app">
+  <div id="app" class="container-fluid">
     <!--显示的当前路由地址所以对应的内容-->
     <router-view/>
   </div>
