@@ -3,11 +3,9 @@
     <home-header id="own-up-area" class="col-md-12"></home-header>
     <div id="own-middle-area" class="col-md-12">
       <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6 main">
+        <div class="col-md-8 main">
           <content-card></content-card>
         </div>
-        <div class="col-md-3"></div>
       </div>
     </div>
     <home-footer id="own-down-area" class="col-md-12"></home-footer>
@@ -39,10 +37,12 @@ export default {
 
 <style>
   .main {
+    /*let it show up in the middle of the page*/
+    margin: 0 auto;
   }
   #own-middle-area {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
   #own-down-area {
     text-align: center;

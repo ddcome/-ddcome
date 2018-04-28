@@ -1,19 +1,42 @@
 <template>
   <div class="row content-card">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="card-plugins">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <i class="fa fa-heart-o" aria-hidden="true"></i>
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </div>
+    </div>
+    <vue-markdown class="col-12 card-md" v-highlight :source="content" :toc="true"></vue-markdown>
     <div class="col-lg-12 col-md-12 col-sm-12"></div>
-    <vue-markdown class="col-lg-12 col-md-12 col-sm-12" v-highlight :source="content" :toc="true"></vue-markdown>
-    <div class="col-lg-12 col-md-12 col-sm-12"></div>
+    <div class="col-lg-12 col-md-12 col-sm-12">评论：</div>
+      <label for="ipt1" class="col-4"><span>标题:</span></label>
+      <input id="ipt1" class="input col-8" type="text">
+      <label for="ipt2" class="col-4"><span>标题:</span></label>
+      <input id="ipt2" class="input col-8" type="text">
+    <VmEditor width="950px"
+              height="auto"
+              @upload="showHtml">
+    </VmEditor>
+    <div class="col-lg-12 col-md-12 col-sm-12" v-html="mkDate"></div>
   </div>
 </template>
 
 <script>
 import VueMarkdown from 'vue-markdown' // 直接作为一个组件引入
+import VmEditor from 'vm-editor'
 export default {
   name: 'ContentCard',
+  props: {
+    mkDate: ''
+  },
   data () {
     return {
       content: '[toc] \n' +
-      '# 函数\n' +
+      '### 函数\n' +
+      '#### 函数\n' +
+      '##### 函数\n' +
+      '###### 函数\n' +
       '> 参考 https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000\n' +
       '\n' +
       '## 常用的函数\n' +
@@ -92,21 +115,30 @@ export default {
     }
   },
   components: {
-    VueMarkdown
+    VueMarkdown,
+    VmEditor
+  },
+  methods: {
+    showHtml: function (data) {
+      // data contains html string for render
+      console.log(data)
+      this.mkDate = data
+    }
   }
 }
 </script>
 
 <style>
 .content-card {
-  border: 1px solid #ccc;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 70px;
-  padding-bottom: 70px;
-
+  padding: 30px 50px 30px 50px;
+}
+.card-md {
+  /*set overflow*/
   overflow: scroll;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+.card-plugins {
+  float: right;
 }
 </style>

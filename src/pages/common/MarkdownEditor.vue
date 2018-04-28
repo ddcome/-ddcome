@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import markdown from 'markdown'
+import markdown from 'vue-markdown'
 export default {
   name: 'MarkdownEditor',
   props: {

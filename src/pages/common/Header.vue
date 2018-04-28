@@ -19,6 +19,7 @@ export default {
 
 <style>
   .own-header {
+    font-size: 23px;
     /*border-bottom: 1px solid #000;*/
   }
   .own-color-line {
