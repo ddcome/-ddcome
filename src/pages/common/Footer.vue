@@ -1,6 +1,7 @@
 <template>
   <div class="own-footer">
-      ©2014-2019 版权归ddcome博客所有 <br><i class="fa fa-registered" aria-hidden="true"></i>支持原创 <br><i class="fa fa-shield" aria-hidden="true"></i>蒙ICP备14004842号-2 <br>lxd_ddcome@163.com
+      <span>我的实验室</span><br>
+      ©<a href="www.ddcome.cn">DDCOME</a>
   </div>
 </template>
 
